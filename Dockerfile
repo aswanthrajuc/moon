@@ -1,4 +1,4 @@
 FROM ubuntu:18.04
-COPY . /app
-RUN make /app
-CMD python /app/app.py
+RUN apt-get install openssh-server && \
+    sudo systemctl enable ssh && \
+    sudo systemctl start ssh
