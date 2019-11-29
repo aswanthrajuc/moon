@@ -1,8 +1,9 @@
 # Docker
-- task: Docker@2
+- task: PublishPipelineArtifact@1
   inputs:
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'Publish Artifact: drop'
+    publishLocation: 'pipeline'
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
