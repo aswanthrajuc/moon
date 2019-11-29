@@ -1,4 +1,17 @@
 # Docker
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: |
+      mongovolume.yml
+      mongovolumeclaim.yml
+      mongo-deployment.yml
+      mongo-service.yml
+      mongo-endpoint.yml
+      spring-deployment.yml
+      spring-service.yml
+      spring-ingress.yml
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
